@@ -1,3 +1,10 @@
+.header {
+    width: 100vw;
+    position: fixed;
+    margin: 0;
+    z-index: 11;
+}
+
 .navbar {
     display: flex;
     box-shadow: rgba(0,0,0, .15) 0px -2px 10px 0px;
@@ -5,16 +12,19 @@
     align-items: center;
     padding: 1em;
     background-color: #008000;
-    
+    border-bottom: 1px solid #7a7a7a;
+    z-index: 10;
+
 }
 
-.brand {
+.logo {
     font-size: 1.2em;
     padding-left: 4em;
+    color: #fff;
 
 }
 
-.brand span {
+.logo span {
     font-weight: 900;
     text-transform: uppercase;
 }
@@ -32,4 +42,9 @@
 
 .links_list li a {
     padding: .4em 2em;
+    color: #fff;
+}
+
+.links_list li a:hover {
+    color: #bbb;
 }

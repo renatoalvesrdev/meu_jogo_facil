@@ -7,16 +7,19 @@ import Footer from './components/Footer';
 
 //pages import
 import Home from './pages/home/Home';
+import GerarAposta from './pages/gerarAposta/GerarAposta'
 
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
           <div className="container">
+            <Navbar />
             <Routes>
               <Route path='/' element={<Home />} />
+
+              <Route path='/gerarapostas' element={<GerarAposta />} />
             
 
 
