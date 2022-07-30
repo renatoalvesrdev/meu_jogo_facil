@@ -1,6 +1,84 @@
 .container {
-    width: 100%;
+    width: 100vw;
     text-align: center;
-    
-    
+    padding-top: 6em;
 }
+
+.menu_options {
+    margin-left: 9em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: -10em;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    height: 15em;
+}
+
+.btn_loto {
+    background-color: #993399;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 6em;
+    font-weight: bold;
+    border: none;
+    font-size: 2em;
+    padding: .5em;
+  }
+
+  .btn_mega {
+    background-color: #528320;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 6em;
+    font-weight: bold;
+    border: none;
+    font-size: 2em;
+    padding: .5em;
+  }
+
+  .btn_quina {
+    background-color: #343266;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 6em;
+    font-weight: bold;
+    border: none;
+    font-size: 2em;
+    padding: .5em;
+  }
+
+  .btn_lotomania {
+    background-color: #ff6836;
+    margin-left: 50%;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 6em;
+    font-weight: bold;
+    border: none;
+    font-size: 2em;
+    padding: .5em;
+  }
+
+  .btn_dupla {
+    background-color: #b51828;
+    margin-left: 50%;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 6em;
+    font-weight: bold;
+    border: none;
+    font-size: 2em;
+    padding: .5em;
+  }
+
+  
