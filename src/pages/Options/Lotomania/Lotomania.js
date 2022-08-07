@@ -1,23 +1,10 @@
+import GerarNumeros from '../../../components/GerarNumeros';
 import styles from '../Options.module.css';
 
 const Lotomania = () => {
   return (
     <div className={styles.container}>
-        <h1>Lotomania</h1>
-        <h3>Na lotomania você deve marcar 50 números dentre os 100 disponìveis.</h3>
-
-        <div className={styles.container_second}>
-            <h2>Obtenha seus números da sorte.</h2>
-            <select className={styles.select}>
-                <option value="50">50 números</option>
-                
-            </select>
-            <button className={styles.btn}>Sortear</button>
-
-            <div className={styles.container_terc}> 
-              <h2>???????????</h2>
-            </div>
-        </div>
+        <GerarNumeros />
 
        <div className={styles.container_info}>
           <h1>Sobre a Lotomania</h1>

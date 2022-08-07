@@ -1,6 +1,7 @@
 import styles from './Home.module.css';
 import {  Link } from 'react-router-dom';
 
+
 const Home = () => {
 
   return (
@@ -25,6 +26,9 @@ const Home = () => {
                       Estamos na torcida para que você seja um ganhador, boa sorte!!!
         </h3>
       </div>
+      
+      
+      
       
     </div>
   )

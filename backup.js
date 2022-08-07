@@ -1,10 +1,27 @@
-import GerarNumeros from '../../../components/GerarNumeros';
 import styles from '../Options.module.css';
 
 const Lotofacil = () => {
   return (
     <div className={styles.container}>
-        <GerarNumeros />
+        <h1>Lotofácil</h1>
+        <h3>A lotofácil permite que você marque entre 15 e 20 números, dentre os 25 disponíveis.</h3>
+
+        <div className={styles.container_second}>
+            <h2>Escolha quantos números você deseja gerar?</h2>
+            <select className={styles.select}>
+                <option value="15">15 números</option>
+                <option value="16">16 números</option>
+                <option value="17">17 números</option>
+                <option value="18">18 números</option>
+                <option value="19">19 números</option>
+                <option value="20">20 números</option>
+            </select>
+            <button className={styles.btn}>Sortear</button>
+
+            <div className={styles.container_terc}> 
+              <h2>???????????</h2>
+            </div>
+        </div>
 
        <div className={styles.container_info}>
           <h1>Sobre a Lotofácil</h1>
@@ -25,6 +42,8 @@ const Lotofacil = () => {
 
           <h2>Recebimento de prêmios</h2>
           <p>Você pode receber seu prêmio em qualquer casa lotérica credenciada ou nas agências da Caixa. Caso o prêmio líquido seja superior a R$ 1.332,78 (bruto de R$ 1.903,98) o pagamento pode ser realizado somente nas agências da Caixa. Valores iguais ou acima de R$ 10.000,00 são pagos após 2 dias de sua apresentação na agência da Caixa.</p>
+
+
        </div>
 
     </div>

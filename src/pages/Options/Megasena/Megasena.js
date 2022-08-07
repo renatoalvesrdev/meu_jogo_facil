@@ -1,31 +1,12 @@
+import GerarNumeros from '../../../components/GerarNumeros';
 import styles from '../Options.module.css';
 
 const Megasena = () => {
+
+  
   return (
     <div className={styles.container}>
-        <h1>Mega-sena</h1>
-        <h3>A Mega-sena permite que você marque entre 6 a 15 números, dentre os 60 disponíveis.</h3>
-
-        <div className={styles.container_second}>
-            <h2>Escolha quantos números você deseja gerar?</h2>
-            <select className={styles.select}>
-                <option value="6">6 números</option>
-                <option value="7">7 números</option>
-                <option value="8">8 números</option>
-                <option value="9">9 números</option>
-                <option value="10">10 números</option>
-                <option value="11">12 números</option>
-                <option value="12">12 números</option>
-                <option value="13">13 números</option>
-                <option value="14">14 números</option>
-                <option value="15">15 números</option>
-            </select>
-            <button className={styles.btn}>Sortear</button>
-
-            <div className={styles.container_terc}> 
-              <h2>???????????</h2>
-            </div>
-        </div>
+        <GerarNumeros />
 
        <div className={styles.container_info}>
           <h1>Sobre a Mega-sena</h1>
