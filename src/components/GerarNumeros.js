@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { React, useState } from 'react';
 import styles from '../pages/Options/Options.module.css';
 
 const GerarNumeros = () => {
@@ -9,9 +9,34 @@ const GerarNumeros = () => {
 
     const [number, setNumber] = useState(1);
 
-    const Sortear = e => {
-        e.preventDefault();
+    let max;
+    if (urlSplit === 'lotofacil') {
+        max = 25;
+    } else if (urlSplit === 'megasena') {
+        max = 60;
+    } else if (urlSplit === 'duplasena') {
+        max = 50;
+    } else if (urlSplit === 'quina') {
+        max = 80;
+    } else if (urlSplit === 'lotomania') {
+        max = 100;
     }
+
+    let numerosSorteados = [];
+
+    const Sortear = (e) => {
+        e.preventDefault();
+
+        while (numerosSorteados.length < number) {
+            let numeroSorteado = Math.floor(Math.random() * (max - 1) + 1);
+
+            if (numerosSorteados.indexOf(numeroSorteado) === -1) {
+                numerosSorteados.push(numeroSorteado);
+
+                return numerosSorteados;
+            }}
+        }
+
     
   return (
      <div>
@@ -34,7 +59,7 @@ const GerarNumeros = () => {
                 <button onClick={Sortear} className={styles.btn}>Sortear</button>
     
                 <div className={styles.container_terc}> 
-                  <h2>???????????</h2>
+                <h2>{numerosSorteados}</h2>
                 </div>
             </div>
         </div>  
@@ -63,7 +88,7 @@ const GerarNumeros = () => {
                     <button onClick={Sortear} className={styles.btn}>Sortear</button>
 
                     <div className={styles.container_terc}> 
-                    <h2>???????????</h2>
+                    <h2>{numerosSorteados}</h2>
                     </div>
                 </div>
             </div>
@@ -93,7 +118,7 @@ const GerarNumeros = () => {
                     <button onClick={Sortear} className={styles.btn}>Sortear</button>
 
                     <div className={styles.container_terc}> 
-                    <h2>???????????</h2>
+                    <h2>{numerosSorteados}</h2>
                     </div>
                 </div>
             </div>
@@ -122,7 +147,7 @@ const GerarNumeros = () => {
                     <button onClick={Sortear} className={styles.btn}>Sortear</button>
 
                     <div className={styles.container_terc}> 
-                    <h2>???????????</h2>
+                    <h2>{numerosSorteados}</h2>
                     </div>
                 </div>
             </div>
@@ -143,7 +168,7 @@ const GerarNumeros = () => {
                     <button onClick={Sortear} className={styles.btn}>Sortear</button>
 
                     <div className={styles.container_terc}> 
-                    <h2>???????????</h2>
+                    <h2>{numerosSorteados}</h2>
                     </div>
                 </div>
             </div>
