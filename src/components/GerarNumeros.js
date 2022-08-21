@@ -9,6 +9,8 @@ const GerarNumeros = () => {
 
     const [number, setNumber] = useState(1);
 
+    const [sorteados, setSorteados] = useState();
+
     let max;
     if (urlSplit === 'lotofacil') {
         max = 25;
@@ -32,10 +34,12 @@ const GerarNumeros = () => {
 
             if (numerosSorteados.indexOf(numeroSorteado) === -1) {
                 numerosSorteados.push(numeroSorteado);
-
-                return numerosSorteados;
             }}
+            console.log(numerosSorteados);
+            setSorteados(numerosSorteados);
         }
+
+    
 
     
   return (
@@ -59,7 +63,7 @@ const GerarNumeros = () => {
                 <button onClick={Sortear} className={styles.btn}>Sortear</button>
     
                 <div className={styles.container_terc}> 
-                <h2>{numerosSorteados}</h2>
+                {<h2>{sorteados}</h2>}
                 </div>
             </div>
         </div>  
