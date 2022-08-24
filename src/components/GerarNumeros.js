@@ -3,9 +3,9 @@ import styles from '../pages/Options/Options.module.css';
 
 const GerarNumeros = () => {
 
-    const url = window.location.href
+    const url = window.location.href;
 
-    const urlSplit = url.split('/')[3]
+    const urlSplit = url.split('/')[3];
 
     const [number, setNumber] = useState(1);
 
@@ -35,13 +35,16 @@ const GerarNumeros = () => {
             if (numerosSorteados.indexOf(numeroSorteado) === -1) {
                 numerosSorteados.push(numeroSorteado);
             }}
+
+            const numerosRenderizados = numerosSorteados.map((sorteio) => <li className={styles.lista} key={sorteio}>{sorteio}</li>);
+
+            numerosRenderizados.join('-')
+
             console.log(numerosSorteados);
-            setSorteados(numerosSorteados);
+
+            setSorteados(numerosRenderizados);
         }
 
-    
-
-    
   return (
      <div>
         {urlSplit === 'lotofacil' && 
@@ -62,9 +65,9 @@ const GerarNumeros = () => {
                 </select>
                 <button onClick={Sortear} className={styles.btn}>Sortear</button>
     
-                <div className={styles.container_terc}> 
-                {<h2>{sorteados}</h2>}
-                </div>
+                <h2 className={styles.container_terc}> 
+                    {sorteados}
+                </h2>
             </div>
         </div>  
         }
@@ -91,9 +94,9 @@ const GerarNumeros = () => {
                     </select>
                     <button onClick={Sortear} className={styles.btn}>Sortear</button>
 
-                    <div className={styles.container_terc}> 
-                    <h2>{numerosSorteados}</h2>
-                    </div>
+                    <h2 className={styles.container_terc}> 
+                    {sorteados}
+                    </h2>
                 </div>
             </div>
         }
@@ -121,9 +124,9 @@ const GerarNumeros = () => {
                     </select>
                     <button onClick={Sortear} className={styles.btn}>Sortear</button>
 
-                    <div className={styles.container_terc}> 
-                    <h2>{numerosSorteados}</h2>
-                    </div>
+                    <h2 className={styles.container_terc}> 
+                    {sorteados}
+                    </h2>
                 </div>
             </div>
         }
@@ -150,9 +153,9 @@ const GerarNumeros = () => {
                     </select>
                     <button onClick={Sortear} className={styles.btn}>Sortear</button>
 
-                    <div className={styles.container_terc}> 
-                    <h2>{numerosSorteados}</h2>
-                    </div>
+                    <h2 className={styles.container_terc}> 
+                    {sorteados}
+                    </h2>
                 </div>
             </div>
         }
@@ -171,9 +174,9 @@ const GerarNumeros = () => {
                     </select>
                     <button onClick={Sortear} className={styles.btn}>Sortear</button>
 
-                    <div className={styles.container_terc}> 
-                    <h2>{numerosSorteados}</h2>
-                    </div>
+                    <h2 className={styles.container_terc}> 
+                    {sorteados}
+                    </h2>
                 </div>
             </div>
         }

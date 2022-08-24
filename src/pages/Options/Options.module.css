@@ -16,17 +16,21 @@ background-color: #9e9797;
 .container_terc {
     margin: 0 auto;
     margin-top: 2em;
-    width: 25em;
-    height: 5em;
+    height: 3em;
+    max-width: 25em;
+    padding: 10px;
     border: 1px solid black;
-    padding: 10px 15px;
-    border-radius: 10px;   
+    border-radius: 10px;
+    display: flex;
+    color: #000;   
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
 }
 
-.container_terc h2 {
-    font-size: 1.5em;
-    color: #000;
-    
+.lista { 
+    padding-right: 10px;
 }
 
 
@@ -73,3 +77,4 @@ font-size: 1.5em;
 background-color: #0a5307;  
 transition: 0.5s;
 }
+
