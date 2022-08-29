@@ -63,11 +63,11 @@ const GerarNumeros = () => {
                     <option value="19">19 números</option>
                     <option value="20">20 números</option>
                 </select>
-                <button onClick={Sortear} className={styles.btn}>Sortear</button>
-    
-                <h2 className={styles.container_terc}> 
+                <button onClick={Sortear} className={styles.btn}>Sortear</button>   
+
+                <ul className={styles.container_terc}> 
                     {sorteados}
-                </h2>
+                </ul>
             </div>
         </div>  
         }
@@ -94,9 +94,9 @@ const GerarNumeros = () => {
                     </select>
                     <button onClick={Sortear} className={styles.btn}>Sortear</button>
 
-                    <h2 className={styles.container_terc}> 
+                    <ul className={styles.container_terc}> 
                     {sorteados}
-                    </h2>
+                </ul>
                 </div>
             </div>
         }
@@ -124,9 +124,9 @@ const GerarNumeros = () => {
                     </select>
                     <button onClick={Sortear} className={styles.btn}>Sortear</button>
 
-                    <h2 className={styles.container_terc}> 
+                    <ul className={styles.container_terc}> 
                     {sorteados}
-                    </h2>
+                    </ul>
                 </div>
             </div>
         }
@@ -153,9 +153,9 @@ const GerarNumeros = () => {
                     </select>
                     <button onClick={Sortear} className={styles.btn}>Sortear</button>
 
-                    <h2 className={styles.container_terc}> 
+                    <ul className={styles.container_terc}> 
                     {sorteados}
-                    </h2>
+                    </ul>
                 </div>
             </div>
         }
@@ -174,9 +174,9 @@ const GerarNumeros = () => {
                     </select>
                     <button onClick={Sortear} className={styles.btn}>Sortear</button>
 
-                    <h2 className={styles.container_terc}> 
+                    <ul className={styles.container_terc}> 
                     {sorteados}
-                    </h2>
+                    </ul>
                 </div>
             </div>
         }

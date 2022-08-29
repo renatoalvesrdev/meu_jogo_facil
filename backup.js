@@ -1,53 +1,187 @@
-import styles from '../Options.module.css';
+import { React, useState } from 'react';
+import styles from '../pages/Options/Options.module.css';
 
-const Lotofacil = () => {
+const GerarNumeros = () => {
+
+    const url = window.location.href;
+
+    const urlSplit = url.split('/')[3];
+
+    const [number, setNumber] = useState(1);
+
+    const [sorteados, setSorteados] = useState();
+
+    let max;
+    if (urlSplit === 'lotofacil') {
+        max = 25;
+    } else if (urlSplit === 'megasena') {
+        max = 60;
+    } else if (urlSplit === 'duplasena') {
+        max = 50;
+    } else if (urlSplit === 'quina') {
+        max = 80;
+    } else if (urlSplit === 'lotomania') {
+        max = 100;
+    }
+
+    let numerosSorteados = [];
+
+    const Sortear = (e) => {
+        e.preventDefault();
+
+        while (numerosSorteados.length < number) {
+            let numeroSorteado = Math.floor(Math.random() * (max - 1) + 1);
+
+            if (numerosSorteados.indexOf(numeroSorteado) === -1) {
+                numerosSorteados.push(numeroSorteado);
+            }}
+
+            const numerosRenderizados = numerosSorteados.map((sorteio) => <li className={styles.lista} key={sorteio}>{sorteio}</li>);
+
+            numerosRenderizados.join('-')
+
+            console.log(numerosSorteados);
+
+            setSorteados(numerosRenderizados);
+        }
+
   return (
-    <div className={styles.container}>
-        <h1>Lotofácil</h1>
-        <h3>A lotofácil permite que você marque entre 15 e 20 números, dentre os 25 disponíveis.</h3>
-
-        <div className={styles.container_second}>
-            <h2>Escolha quantos números você deseja gerar?</h2>
-            <select className={styles.select}>
-                <option value="15">15 números</option>
-                <option value="16">16 números</option>
-                <option value="17">17 números</option>
-                <option value="18">18 números</option>
-                <option value="19">19 números</option>
-                <option value="20">20 números</option>
-            </select>
-            <button className={styles.btn}>Sortear</button>
-
-            <div className={styles.container_terc}> 
-              <h2>???????????</h2>
+     <div>
+        {urlSplit === 'lotofacil' && 
+        <div>
+            <h1>Lotofácil</h1>
+            <h3>A lotofácil permite que você marque entre 15 e 20 números, dentre os 25 disponíveis.</h3>
+    
+            <div className={styles.container_second}>
+                <h2>Escolha quantos números você deseja gerar?</h2>
+                <select name='number' value={number} className={styles.select} onChange={quant => setNumber(parseInt(quant.target.value))}>
+                    <option value="">Selecione</option>
+                    <option value="15">15 números</option>
+                    <option value="16">16 números</option>
+                    <option value="17">17 números</option>
+                    <option value="18">18 números</option>
+                    <option value="19">19 números</option>
+                    <option value="20">20 números</option>
+                </select>
+                <button onClick={Sortear} className={styles.btn}>Sortear</button>
+    
+                <ul className={styles.container_terc}> 
+                    {sorteados}
+                </ul>
             </div>
-        </div>
+        </div>  
+        }
 
-       <div className={styles.container_info}>
-          <h1>Sobre a Lotofácil</h1>
-          <h2>Como jogar?</h2>
-          <p>O apostador deve marcar entre 15 a 20 números de 1 a 25 e ganha se acertar 11, 12, 13, 14 ou 15 números.</p>
+        {urlSplit === 'megasena' &&
+            <div>
+                <h1>Mega-sena</h1>
+                <h3>A Mega-sena permite que você marque entre 6 a 15 números, dentre os 60 disponíveis.</h3>
 
-          <h2>Aposta</h2>
-          <p>A aposta mínima, de 15 números, custa R$ 2,50. <br/>
-          16 números custa R$40,00. <br/>
-          17 números custa R$340,00. <br/>
-          18 números custa R$2040,00. <br/>
-          19 números custa R$9690,00. <br/>
-          20 numeros custa R$38.760,00. <br/>
-          </p>
+                <div className={styles.container_second}>
+                    <h2>Escolha quantos números você deseja gerar?</h2>
+                    <select name='number' value={number} className={styles.select} onChange={quant => setNumber(quant.target.value)}>
+                        <option value="">Selecione</option>
+                        <option value="6">6 números</option>
+                        <option value="7">7 números</option>
+                        <option value="8">8 números</option>
+                        <option value="9">9 números</option>
+                        <option value="10">10 números</option>
+                        <option value="11">12 números</option>
+                        <option value="12">12 números</option>
+                        <option value="13">13 números</option>
+                        <option value="14">14 números</option>
+                        <option value="15">15 números</option>
+                    </select>
+                    <button onClick={Sortear} className={styles.btn}>Sortear</button>
 
-          <h2>Sorteios</h2>
-          <p>Os sorteios são realizados de segundas a sábados sempre às 20h.</p>
+                    <h2 className={styles.container_terc}> 
+                    {sorteados}
+                    </h2>
+                </div>
+            </div>
+        }
 
-          <h2>Recebimento de prêmios</h2>
-          <p>Você pode receber seu prêmio em qualquer casa lotérica credenciada ou nas agências da Caixa. Caso o prêmio líquido seja superior a R$ 1.332,78 (bruto de R$ 1.903,98) o pagamento pode ser realizado somente nas agências da Caixa. Valores iguais ou acima de R$ 10.000,00 são pagos após 2 dias de sua apresentação na agência da Caixa.</p>
+        {urlSplit === 'quina' &&
+            <div>
+                <h1>Quina</h1>
+                <h3>A Quina permite que você marque entre 5 a 15 números, dentre os 80 disponíveis.</h3>
 
+                <div className={styles.container_second}>
+                    <h2>Escolha quantos números você deseja gerar?</h2>
+                    <select name='number' value={number} className={styles.select} onChange={quant => setNumber(quant.target.value)}>
+                        <option value="">Selecione</option>
+                        <option value="5">5 números</option>
+                        <option value="6">6 números</option>
+                        <option value="7">7 números</option>
+                        <option value="8">8 números</option>
+                        <option value="9">9 números</option>
+                        <option value="10">10 números</option>
+                        <option value="11">12 números</option>
+                        <option value="12">12 números</option>
+                        <option value="13">13 números</option>
+                        <option value="14">14 números</option>
+                        <option value="15">15 números</option>
+                    </select>
+                    <button onClick={Sortear} className={styles.btn}>Sortear</button>
 
-       </div>
+                    <h2 className={styles.container_terc}> 
+                    {sorteados}
+                    </h2>
+                </div>
+            </div>
+        }
 
-    </div>
+        {urlSplit === 'duplasena' &&
+            <div>
+                <h1>Dupla-sena</h1>
+                <h3>A Dupla-sena permite que você marque entre 6 a 15 números, dentre os 50 disponíveis.</h3>
+
+                <div className={styles.container_second}>
+                    <h2>Escolha quantos números você deseja gerar?</h2>
+                    <select name='number' value={number} className={styles.select} onChange={quant => setNumber(quant.target.value)}>
+                        <option value="">Selecione</option>
+                        <option value="6">6 números</option>
+                        <option value="7">7 números</option>
+                        <option value="8">8 números</option>
+                        <option value="9">9 números</option>
+                        <option value="10">10 números</option>
+                        <option value="11">12 números</option>
+                        <option value="12">12 números</option>
+                        <option value="13">13 números</option>
+                        <option value="14">14 números</option>
+                        <option value="15">15 números</option>
+                    </select>
+                    <button onClick={Sortear} className={styles.btn}>Sortear</button>
+
+                    <h2 className={styles.container_terc}> 
+                    {sorteados}
+                    </h2>
+                </div>
+            </div>
+        }
+
+        {urlSplit === 'lotomania' &&
+            <div>
+                <h1>Lotomania</h1>
+                <h3>Na lotomania você deve marcar 50 números dentre os 100 disponìveis.</h3>
+
+                <div className={styles.container_second}>
+                    <h2>Obtenha seus números da sorte.</h2>
+                    <select name='number' value={number} className={styles.select} onChange={quant => setNumber(quant.target.value)}>
+                        <option value="">Selecione</option>
+                        <option value="50">50 números</option>
+                        
+                    </select>
+                    <button onClick={Sortear} className={styles.btn}>Sortear</button>
+
+                    <h2 className={styles.container_terc}> 
+                    {sorteados}
+                    </h2>
+                </div>
+            </div>
+        }
+     </div>
   )
 }
 
-export default Lotofacil
+export default GerarNumeros
