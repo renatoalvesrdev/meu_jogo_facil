@@ -35,10 +35,16 @@ const GerarNumeros = () => {
             if (numerosSorteados.indexOf(numeroSorteado) === -1) {
                 numerosSorteados.push(numeroSorteado);
             }}
+        
+            numerosSorteados.sort((a, b) => a - b);
 
             numerosSorteados.sort((a, b) => a - b);
 
             const numerosRenderizados = numerosSorteados.map((sorteio) => <li className={styles.lista} key={sorteio}>{sorteio}</li>);
+<<<<<<< HEAD
+=======
+
+>>>>>>> c91baec404b61c07886a5b3e31841122715131ba
             console.log(numerosSorteados);
 
             setSorteados(numerosRenderizados);
