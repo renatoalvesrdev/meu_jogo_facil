@@ -13,15 +13,15 @@ const GerarNumeros = () => {
 
     let max;
     if (urlSplit === 'lotofacil') {
-        max = 25;
+        max = 26;
     } else if (urlSplit === 'megasena') {
-        max = 60;
+        max = 61;
     } else if (urlSplit === 'duplasena') {
-        max = 50;
+        max = 51;
     } else if (urlSplit === 'quina') {
-        max = 80;
+        max = 81;
     } else if (urlSplit === 'lotomania') {
-        max = 100;
+        max = 101;
     }
 
     let numerosSorteados = [];
@@ -36,10 +36,9 @@ const GerarNumeros = () => {
                 numerosSorteados.push(numeroSorteado);
             }}
 
+            numerosSorteados.sort((a, b) => a - b);
+
             const numerosRenderizados = numerosSorteados.map((sorteio) => <li className={styles.lista} key={sorteio}>{sorteio}</li>);
-
-            numerosRenderizados.join('-')
-
             console.log(numerosSorteados);
 
             setSorteados(numerosRenderizados);
@@ -86,7 +85,7 @@ const GerarNumeros = () => {
                         <option value="8">8 números</option>
                         <option value="9">9 números</option>
                         <option value="10">10 números</option>
-                        <option value="11">12 números</option>
+                        <option value="11">11 números</option>
                         <option value="12">12 números</option>
                         <option value="13">13 números</option>
                         <option value="14">14 números</option>
@@ -116,7 +115,7 @@ const GerarNumeros = () => {
                         <option value="8">8 números</option>
                         <option value="9">9 números</option>
                         <option value="10">10 números</option>
-                        <option value="11">12 números</option>
+                        <option value="11">11 números</option>
                         <option value="12">12 números</option>
                         <option value="13">13 números</option>
                         <option value="14">14 números</option>
@@ -145,7 +144,7 @@ const GerarNumeros = () => {
                         <option value="8">8 números</option>
                         <option value="9">9 números</option>
                         <option value="10">10 números</option>
-                        <option value="11">12 números</option>
+                        <option value="11">11 números</option>
                         <option value="12">12 números</option>
                         <option value="13">13 números</option>
                         <option value="14">14 números</option>

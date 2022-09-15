@@ -4,15 +4,16 @@ import {  Link } from 'react-router-dom';
 
 const Home = () => {
 
+  
   return (
     <div className={styles.container}>
       <div className={styles.main}>
         <img className={styles.banner} src="http://acontececuritiba.com.br/n/images/2018-08-08_banner-release-loterias.png" alt="banner com imagem da loteria federal da caixa" />
       </div>
-      <h1>Chega de pensar demais na hora de escolher os "números da sorte". <br/>
-          Jogue de forma totalmente aleatória, como funciona nos sorteios, <br/>
-          e aumente sua chance de ganhar.
-      </h1>
+        <h1>Chega de pensar demais na hora de escolher os "números da sorte". <br/>
+            Jogue de forma totalmente aleatória, como funciona nos sorteios, <br/>
+            e aumente sua chance de ganhar.
+        </h1>
 
       <Link to='/gerarapostas' className={styles.btn}>
         Gerar volante
@@ -26,10 +27,7 @@ const Home = () => {
                       Estamos na torcida para que você seja um ganhador, boa sorte!!!
         </h3>
       </div>
-      
-      
-      
-      
+       
     </div>
   )
 }

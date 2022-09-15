@@ -2,7 +2,7 @@ import './App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 //components import
-import Navbar from './components/Navbar';
+import Navbar from './components/Nav/Navbar';
 import Footer from './components/Footer';
 
 //pages import
@@ -35,10 +35,9 @@ function App() {
               <Route path='/lotomania' element={<Lotomania />} />
               <Route path='/megasena' element={<Megasena />} />
               <Route path='/quina' element={<Quina />} />
-            
             </Routes>
+            <Footer />
           </div>
-        <Footer />
       </BrowserRouter>
     </div>
   );
